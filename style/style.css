@@ -1,0 +1,277 @@
+body {
+    margin: 2px 25px;
+    text-align: center;
+    min-width: 650px;
+}
+
+/* Header css property */
+header {
+    text-align: center;
+    background-color: black;
+    font-size: 1.3em;
+    color:white;
+    min-height: 100px;
+    max-height: 120px;
+}
+header h1 {
+text-align: center;
+    margin: 0%;
+    padding: 2% 5%;
+}
+
+/* Footer css property */
+footer {
+    background-color: black;
+    color: white;
+    min-height: 30px;
+    padding: 0.5% 5%;
+    position: fixed;
+    bottom: 0;
+    width: 86.5%;
+}
+
+/* Nav bar css properties */
+.menu-nav {
+    position: sticky;
+    top: 0%;
+    z-index: 1;
+    text-align: left;
+}
+.nav-link {
+    margin: 0%;
+    background-color: rgb(0, 0, 0, 0.5);
+}
+.nav-link li a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+.nav-link li {
+    padding: 10px;
+    display: inline-block;
+}
+.nav-link li:hover {
+    background-color: rgba(0, 0, 0, 0.7);;
+}
+.nav-link li:nth-child(2):hover #dropdown1, .nav-link li:nth-child(3):hover #dropdown2 {
+    display: block;
+}
+#dropdown1, #dropdown2 {
+    position: absolute;
+    width: auto;
+    min-width: 120px;
+    max-width: 150px;
+    display: none;
+    top: 42.75px;
+    background-color: whitesmoke;
+    padding: 0%;
+}
+#dropdown1 li, #dropdown2 li {
+    display: block;
+}
+#dropdown1 li:hover, #dropdown2 li:hover {
+    background-color: gainsboro;
+}
+#dropdown1 li a, #dropdown2 li a {
+    color: steelblue;
+    font-size: 16px;
+}
+
+/* Image animation css property */
+#animate, #covid-care, #diabetes-care {
+    display: block;
+    margin: 1.5% 0%;
+}
+#animate img, #covid-care img, #diabetes-care img {
+    max-height: 550px;
+}
+#animate {
+    position: relative;
+    height: 500px;
+}
+#animate > * {
+    visibility: hidden; 
+    position: absolute; 
+    animation: autoplay 10s infinite;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    width: 98%;
+    height: 500px;
+    border: 2px solid steelblue;
+    padding: 0.5%;
+    z-index: -1;
+}
+@keyframes autoplay {
+    0% {
+        visibility: visible;
+    } 
+    20% {
+        visibility: hidden;
+    }
+}
+#animate > *:nth-child(1) {
+    animation-delay: 0s;
+}
+#animate > *:nth-child(2) {
+    animation-delay: 2s;
+}
+#animate > *:nth-child(3) {
+    animation-delay: 4s;
+}
+#animate > *:nth-child(4) {
+    animation-delay: 6s;
+}
+#animate > *:nth-child(5) {
+    animation-delay: 8s;
+}
+
+/* Product section css property */
+h1, section p {
+    text-align: left;
+}
+.wrap h1 {
+    font-size: 18px;
+}
+section p {
+    color: lightseagreen;
+}
+#covid-care, #diabetes-care, div {
+    text-align: center; 
+}
+.wrap {
+    background-color: rgb(247, 245, 245);
+    display: inline-block;
+    margin: 1.5%;
+    padding: 1%;
+    width: 18%;
+    height: 40vh;
+    box-shadow: 5px 10px 10px #bebcbc;
+    overflow: auto;
+}
+.wrap img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 20vh;
+}
+.cast {
+    min-width:80px;
+    min-height:50px;
+}
+.wrap button {
+    color: orangered;
+    background-color: rgb(171, 214, 229);
+    border: 1px solid steelblue;
+    border-radius: 5px;
+    width: 80%;
+    padding: 2%;
+    font-weight: bold;
+    cursor: pointer;
+}
+.wrap:hover {
+    width : 20%;
+    height: 42vh;
+}
+.wrap button:active {
+    background-color: rgb(250, 234, 230);
+    border: 1px solid rgb(0, 255, 76);
+}
+
+
+/* Form Layout css property */
+#lab-test {
+    margin: auto;
+    width: 85%;
+}
+#lab-form {
+    text-align: center;
+    display: flex;
+    width: 100%;
+}
+#lab-form > div {
+    text-align: center;
+}
+#lab-form div:first-child {
+    padding: 20px; 
+    text-align: justify; overflow: auto;
+    width: 50%;
+}
+#lab-form div:last-child {
+    width: 50%;
+    position: relative;
+}
+.lab-img{
+    width: 100%;
+    position: sticky;
+    left:0;
+    height: 100%;
+    display: block;
+}
+
+/* Form Outline css property */
+#lab-test {
+    padding: 1%;
+    display: inline-block;
+    height: 65vh;
+}
+#lab-form {
+    box-shadow: 2px 2px 10px 5px #bebcbc;
+    overflow: auto;
+    height: 65vh;
+    width: 100%;
+    margin: auto;
+}
+
+/* Form Label css porperty */
+#lab-test h1 {
+    font-size: 1.4em;
+}
+
+/* Form Input fields css property */
+input {
+    border: none;
+    border-bottom: 2px solid rgb(181, 180, 180);
+    padding: 1%;
+    margin: 2%;
+    width: 43%;
+}
+select, .sub-label {
+    margin: 2%;
+    padding: 1%;
+    width: 40%;
+}
+
+/* Form button css property */
+#lab-test button {
+    color: white;
+    background-color: blueviolet;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 0.5% 1.5%;
+    margin: 1%;
+    cursor: pointer;
+}
+#lab-test button:active {
+    background-color: blue;
+}
+
+/* Close button css property */
+#close-button {
+    background-color: black;
+    color: whitesmoke;
+    position: fixed;
+    top: 1em;
+    right: 3em;
+    padding: 0.75% 2%;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1;
+}
+#close-button:hover {
+    background-color: rgb(139, 135, 135);
+    font-weight: bold;
+}

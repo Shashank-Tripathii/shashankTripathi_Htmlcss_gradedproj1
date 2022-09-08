@@ -1,0 +1,115 @@
+
+
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <head>
+        <title>Lab Test Form</title>
+        <link rel="stylesheet" href="style/style.css">
+    </head>
+    <body>
+        <header><h1>Pharmacy - Lab Test form</h1></header>
+
+        <button id="close-button" onclick="self.close()">Cancel</button>
+
+        <nav class="menu-nav" style="text-align: right;">         
+            <ul class="nav-link" >
+                <li>
+                    <!-- <a id="link5" href="#" onclick="self.close()">Close</a> -->
+                </li>
+            </ul>
+        </nav>
+
+        <div id="lab-test">
+            <form id="lab" action="" onsubmit="return validateForm()" method="post">
+                <section id="lab-form">
+                    <div>
+                        <h1>1. Your Contact Details</h1>
+                        <input type="text" placeholder="Full Name" pattern="[a-zA-Z. ]+" title="Only alphabetes allowed" required/>  
+                        <input type="text" placeholder="Patient Id if exists"/> <br/>
+                        <input type="number" placeholder="Contact Number" min="6000000000" max="9999999999" maxlength="10" required/>  
+                        <input type="email" placeholder="Email Id" required/> <br/>
+                        <br/>
+
+                        <h1>2. Address</h1>
+                        <input type="text" placeholder="House Number" required/>  
+                        <input type="text" placeholder="Street" required/> <br/>
+                        <input type="text" placeholder="Area" required> <br/> <br/>
+                        <label for="district" class="sub-label"><strong>District</strong></label> <br/>
+                        <select name="district" id="district" required>
+                            <option value="">Choose</option>
+                            <option value="Option 1">Option 1</option>
+                            <option value="Option 2">Option 2</option>
+                            <option value="Option 3">Option 3</option>
+                            <option value="Option 4">Option 4</option>
+                            <option value="Option 5">Option 5</option>
+                        </select>
+                        <br/> <br/>
+
+                        <h1>3. Choose the Test Type</h1>
+                        <input type="checkbox" id="option1" name="option1" value="CBC"><label for="option1">CBC</label> <br/>
+                        <input type="checkbox" id="option2" name="option2" value="CompleteUrine"><label for="option2">Complete Urine</label> <br/>
+                        <input type="checkbox" id="option3" name="option3" value="LipidProfile"><label for="option3">Lipid Profile</label> <br/>
+                        <input type="checkbox" id="option4" name="option4" value="Thyroid Stimulating Hormone(TSH)"><label for="option4">Thyroid Stimulating Hormone(TSH)</label> <br/>
+                        <input type="checkbox" id="option5" name="option5" value="Glucose Test"><label for="option5">Glucose Test</label> <br/>
+                        <br/>
+
+                        <h1>4. Do you want a hard copy of the report also?</h1>
+                        <input type="radio" id="radio1" name="report" value="Yes"><label for="radio1">Yes</label> <br/>
+                        <input type="radio" id="radio2" name="report" value="No"><label for="radio2">No</label> <br/>
+                        <br/> 
+
+                        <h1>5. Select Your Comfortable Date and Time</h1>
+                        <label for="date" class="sub-label">Date</label>  <input type="date" id="date" name="date" required> <br/>
+                        <label for="time" class="sub-label">Time</label>  <input type="time" id="time" name="time" required> <br/>
+                        <br/>
+                    </div>        
+                    <div>   
+                        <img class="lab-img" src="Images/Lab-Test/lab-test.jpg" alt="Lab Test">
+                    </div> 
+                </section>
+
+                <br/>
+                <div>
+                    <button type="reset" form="lab">Reset</button>
+                    <button type="submit" form="lab">Submit</button>
+                </div>
+            </form>
+        </div>
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+        <footer>@copyright. Only for demonstration purposes.</footer>
+    </body>
+
+    <script>
+        function validateForm() {
+            var inputs = document.getElementsByTagName('input');
+            var checkboxValid = false, radioValid = false;
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == 'checkbox' && inputs[i].checked) {
+                    checkboxValid = true;
+                }
+                else if (inputs[i].type == 'radio' && inputs[i].checked) {
+                    radioValid = true;
+                }
+
+                if (checkboxValid && radioValid) {
+                    //show success message
+                    alert("Form has been submitted successfully!");
+                    return true;
+                }
+            }
+            if(!checkboxValid) {
+                alert("Test type - Check atleast one box without fail");
+            }
+            else if(!radioValid) {
+                alert("Select one option for Hard copy of report");
+            }
+            return false;
+        }
+    </script>
+</html>
